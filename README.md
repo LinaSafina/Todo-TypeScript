@@ -2,7 +2,7 @@
 
 React 17 + TypeScript
 
-[Deploy]()
+[Deploy](https://todo-ts-1bd68.web.app)
 
 ## Возможности
 
