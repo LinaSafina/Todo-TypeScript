@@ -1,10 +1,10 @@
 import Todos from './components/Todos';
-import './App.css';
 import NewTodo from './components/NewTodo';
+import './App.css';
 
 function App() {
   return (
-    <div className='App'>
+    <div className='app'>
       <NewTodo />
       <Todos />
     </div>

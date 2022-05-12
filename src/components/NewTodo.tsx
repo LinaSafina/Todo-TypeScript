@@ -19,16 +19,9 @@ const NewTodo: React.FC = () => {
   };
 
   return (
-    <form onSubmit={submitFormHandler}>
+    <form className='form' onSubmit={submitFormHandler}>
       <label htmlFor='new-todo'>New Todo</label>
-      <input
-        type='text'
-        id='new-todo'
-        name='new-todo'
-        ref={inputRef}
-        // value={newTodo}
-        // onChange={changeInputHandler}
-      />
+      <input type='text' id='new-todo' name='new-todo' ref={inputRef} />
       <button type='submit'>Add Todo</button>
     </form>
   );
