@@ -1,26 +1,25 @@
 .app {
-  width: 40%;
+  width: 90%;
+  max-width: 500px;
   margin: 10vh auto;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  row-gap: 1vh;
-}
-
-.form label,
-.form button {
-  align-self: flex-start;
+  align-items: flex-start;
+  row-gap: 2vh;
+  margin-bottom: 5vh;
 }
 
 .form label {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
 }
 
 .form input {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  width: 100%;
   background-color: rgb(242, 237, 237);
   padding: 5px;
   border: 2px solid rgb(242, 237, 237);
@@ -43,6 +42,7 @@
 }
 
 .form button {
+  font-size: 1rem;
   padding: 0.4rem 0.8rem;
   font-weight: 700;
   border: 1px solid #ffbe0b;
@@ -74,4 +74,13 @@
 
 .list li:hover {
   opacity: 0.8;
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    align-items: center;
+  }
+  .list {
+    text-align: center;
+  }
 }
