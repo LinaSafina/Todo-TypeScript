@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import TodoModel from '../models/TodoModel';
 
@@ -18,12 +18,25 @@ export const TodosContextProvider: React.FC<{ children: React.ReactNode }> = (
   props
 ) => {
   const [todos, setTodos] = useState<TodoModel[]>([]);
+
+  useEffect(() => {
+    const savedTodos = localStorage.getItem('todos');
+    const parsedTodos = savedTodos ? JSON.parse(savedTodos) : [];
+    setTodos(parsedTodos);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
+
   const addTodoHandler = (todoText: string) => {
     setTodos((prevState) => [...todos, new TodoModel(todoText)]);
   };
+
   const deleteTodoHandler = (id: string) => {
     setTodos((prevState) => prevState.filter((todo) => todo.id !== id));
   };
+
   const todosValue: TodosCtxObject = {
     items: todos,
     addTodo: addTodoHandler,
