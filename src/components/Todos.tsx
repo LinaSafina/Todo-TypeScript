@@ -7,7 +7,7 @@ const Todos: React.FC = (props) => {
   const todosCtx = useContext(TodosContext);
 
   return (
-    <ul>
+    <ul className='list'>
       {todosCtx.items.map((todo) => (
         <Todo
           text={todo.text}
