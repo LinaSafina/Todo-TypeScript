@@ -17,13 +17,10 @@ const TodosContext = React.createContext<TodosCtxObject>({
 export const TodosContextProvider: React.FC<{ children: React.ReactNode }> = (
   props
 ) => {
-  const [todos, setTodos] = useState<TodoModel[]>([]);
-
-  useEffect(() => {
-    const savedTodos = localStorage.getItem('todos');
-    const parsedTodos = savedTodos ? JSON.parse(savedTodos) : [];
-    setTodos(parsedTodos);
-  }, []);
+  const savedTodos = localStorage.getItem('todos');
+  console.log(savedTodos);
+  const parsedTodos = savedTodos ? JSON.parse(savedTodos) : [];
+  const [todos, setTodos] = useState<TodoModel[]>(parsedTodos);
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
